@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Super Lengkap TKA PKK - Produksi & Usaha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Professional Blue & Slate -->
+    <!-- Application Structure Plan: Menggunakan struktur SPA (Single Page Application) dengan navigasi sticky dan kartu interaktif yang dapat diperluas untuk setiap poin kompetensi. Pendekatan ini dipilih untuk menyajikan materi yang sangat padat secara terstruktur tanpa membebani pengguna. Setiap kartu berfungsi sebagai modul pembelajaran mandiri yang mendalam. Pengguna dapat memilih untuk fokus pada satu topik atau menjelajahi semuanya secara berurutan. Struktur ini secara langsung menjawab permintaan untuk merinci setiap materi dari gambar yang diberikan secara komprehensif. -->
+    <!-- Visualization & Content Choices: 
+        1. Report Info: Semua 13 sub-materi dari gambar. Goal: Inform/Educate/Organize. Viz/Method: Kartu interaktif yang diperluas. Setiap kartu berisi definisi, tujuan, tahapan/komponen kunci, dan contoh praktis. Interaction: Klik untuk membuka/menutup modul detail. Justification: Metode ini paling efektif untuk mengubah daftar kurikulum menjadi materi pembelajaran yang kaya dan mudah dinavigasi.
+        2. Report Info: Konsep proses seperti Design Thinking, Produksi, dan PDCA. Goal: Organize. Viz/Method: Diagram alur sederhana yang dibuat dengan HTML/CSS Flexbox untuk visualisasi langkah-demi-langkah. Interaction: Statis. Justification: Membantu pemahaman proses sekuensial.
+        3. Report Info: Analisis SWOT & Marketing Mix 4P. Goal: Organize. Viz/Method: Grid 2x2 dan daftar terstruktur. Interaction: Statis. Justification: Menggunakan format standar industri yang mudah dikenali dan dipahami untuk menyajikan kerangka kerja strategis.
+        4. Report Info: Pengujian pemahaman. Goal: Assess. Viz/Method: Kuis interaktif yang diperbarui untuk mencerminkan kedalaman materi baru. Interaction: Pilihan ganda dengan umpan balik instan. Justification: Mengevaluasi pemahaman konsep-konsep yang lebih detail.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; }
+        .nav-link.active { color: #2563eb; font-weight: 600; border-bottom-color: #2563eb; }
+        .interactive-card .card-content { max-height: 0; overflow: hidden; transition: max-height 0.7s ease-out; }
+        .interactive-card.active .card-content { max-height: 3500px; transition: max-height 1.5s ease-in; }
+        .interactive-card.active .arrow { transform: rotate(180deg); }
+        .quiz-option.correct { background-color: #dcfce7; border-color: #22c55e; color: #166534; }
+        .quiz-option.incorrect { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; }
+        .flowchart { display: flex; align-items: stretch; justify-content: center; gap: 0.5rem; flex-wrap: wrap;}
+        .flow-step { flex: 1; min-width: 120px; text-align: center; padding: 0.75rem; background-color: #f1f5f9; border-radius: 0.5rem; display: flex; flex-direction: column; justify-content: center;}
+        .flow-arrow { font-size: 1.5rem; color: #94a3b8; align-self: center; }
+        .haki-type-box { border-left-width: 4px; padding: 1rem; border-radius: 0 0.5rem 0.5rem 0; }
+        .step-box { border-left-width: 4px; padding: 1rem; border-radius: 0.5rem; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-blue-600">PKK Super Lengkap</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#produksi" class="nav-link font-medium border-b-2 border-transparent pb-1 transition-colors">Produksi & Pemasaran</a>
+                <a href="#pengelolaan" class="nav-link font-medium border-b-2 border-transparent pb-1 transition-colors">Pengelolaan Usaha</a>
+                <a href="#kuis" class="nav-link font-medium border-b-2 border-transparent pb-1 transition-colors">Uji Kompetensi</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+
+        <section id="hero" class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-800 leading-tight mb-4">Panduan Komprehensif Materi PKK</h1>
+            <p class="max-w-3xl mx-auto text-lg text-slate-600">Setiap kompetensi dari kurikulum dijelaskan secara mendalam. Klik setiap materi untuk membuka modul pembelajaran lengkap.</p>
+        </section>
+
+        <section id="produksi" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-4">1. Kegiatan Produksi, Pemasaran, & Distribusi</h2>
+            <div class="space-y-6">
+                
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">🎨 Pengembangan Desain Produk</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Proses strategis untuk menciptakan produk baru atau memodifikasi produk yang ada, yang berpusat pada pemecahan masalah pengguna dan penciptaan nilai.</p><h4 class="font-semibold text-slate-700 mt-4">Prosedur Pengembangan (Framework: Design Thinking)</h4><div class="text-sm space-y-2"><p><b>1. Empathize:</b> Memahami pengguna secara mendalam melalui riset, wawancara, dan observasi. Tujuannya adalah menemukan kebutuhan yang tak terucapkan.</p><p><b>2. Define:</b> Menganalisis data dari tahap empati untuk merumuskan masalah inti (problem statement) yang jelas dan spesifik.</p><p><b>3. Ideate:</b> Menghasilkan beragam ide solusi melalui sesi brainstorming, mind mapping, atau metode kreatif lainnya.</p><p><b>4. Prototype:</b> Membuat versi awal produk yang dapat diuji (prototipe), mulai dari sketsa hingga model interaktif.</p><p><b>5. Test:</b> Menguji prototipe dengan pengguna untuk mendapatkan umpan balik, memvalidasi asumsi, dan menemukan area perbaikan.</p></div><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menganalisis desain dan prosedur pengembangan produk.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">📦 Pengembangan Desain Kemasan Produk</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Merancang dan memproduksi wadah atau pembungkus produk yang tidak hanya fungsional tetapi juga menjadi alat komunikasi dan branding yang kuat.</p><h4 class="font-semibold text-slate-700 mt-4">Aspek Kunci Desain Kemasan & Label</h4><ul class="list-disc list-inside text-sm text-slate-600"><li><b>Struktur & Fungsionalitas:</b> Melindungi produk dari benturan, suhu, dan kontaminasi. Mudah dibuka, digunakan, dan disimpan kembali.</li><li><b>Desain Visual & Estetika:</b> Penggunaan warna, tipografi, dan gambar yang menarik dan sesuai dengan identitas merek.</li><li><b>Informasi Label:</b> Menyajikan informasi wajib (komposisi, tanggal kedaluwarsa, BPOM) dan informasi pemasaran (keunggulan produk) secara jelas dan jujur.</li><li><b>Keberlanjutan (Sustainability):</b> Mempertimbangkan penggunaan bahan yang ramah lingkungan dan dapat didaur ulang.</li></ul><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Mengevaluasi desain kemasan dan label produk.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">🔧 Pengembangan Prototipe Produk</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Implementasi nyata dari sebuah ide menjadi model kerja awal yang digunakan untuk validasi internal dan eksternal sebelum produksi skala penuh.</p><h4 class="font-semibold text-slate-700 mt-4">Tujuan & Manfaat Utama</h4><ul class="list-disc list-inside text-sm text-slate-600"><li><b>Validasi Konsep:</b> Menguji apakah ide tersebut benar-benar berfungsi dan menyelesaikan masalah yang dituju.</li><li><b>Pengumpulan Umpan Balik:</b> Mendapatkan masukan konkret dari pengguna untuk perbaikan sebelum terlambat.</li><li><b>Mengurangi Risiko & Biaya:</b> Menemukan kesalahan dan kekurangan pada tahap awal jauh lebih murah daripada setelah produksi massal.</li><li><b>Alat Presentasi:</b> Memudahkan komunikasi dengan tim, manajemen, atau investor.</li></ul><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menerapkan pengembangan prototipe produk.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">📝 Perencanaan Produksi</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Proses manajerial untuk menentukan sumber daya (bahan, tenaga kerja, mesin) dan jadwal yang dibutuhkan untuk memproduksi barang sesuai permintaan pasar secara efisien.</p><h4 class="font-semibold text-slate-700 mt-4">Elemen Kunci Perencanaan</h4><ul class="list-disc list-inside text-sm text-slate-600"><li><b>Peramalan Permintaan (Forecasting):</b> Memprediksi jumlah produk yang akan terjual.</li><li><b>Perencanaan Kapasitas:</b> Memastikan mesin dan tenaga kerja cukup untuk memenuhi target.</li><li><b>Manajemen Inventaris:</b> Menentukan jumlah bahan baku yang harus dipesan dan stok barang jadi yang harus disimpan.</li><li><b>Penjadwalan Produksi:</b> Membuat jadwal kerja harian/mingguan untuk setiap lini produksi.</li><li><b>Perhitungan Biaya Produksi:</b> Menentukan Harga Pokok Produksi (HPP) yang mencakup biaya bahan baku, biaya tenaga kerja langsung, dan biaya overhead pabrik.</li></ul><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menentukan perencanaan dan biaya produksi.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">🏭 Proses Produksi</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Tahapan operasional untuk mengubah input (bahan mentah) menjadi output (produk jadi) melalui serangkaian langkah yang terstandarisasi.</p><h4 class="font-semibold text-slate-700 mt-4">Alur Proses Produksi Umum</h4><div class="flowchart text-xs"><div class="flow-step"><b>Input</b><br>(Bahan Baku, Informasi)</div><span class="flow-arrow">►</span><div class="flow-step"><b>Proses Transformasi</b><br>(Perakitan, Pencampuran, Pengolahan)</div><span class="flow-arrow">►</span><div class="flow-step"><b>Output</b><br>(Produk Jadi, Jasa)</div><span class="flow-arrow">►</span><div class="flow-step"><b>Umpan Balik</b><br>(Quality Control)</div></div><h4 class="font-semibold text-slate-700 mt-4">Jenis Proses</h4><p class="text-sm text-slate-600"><b>Produksi Massal:</b> Membuat produk standar dalam jumlah besar (cth: minuman kemasan). <b>Produksi Pesanan (Job Order):</b> Membuat produk unik sesuai pesanan pelanggan (cth: furnitur custom).</p><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menerapkan proses produksi.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">🎁 Pengemasan Produk</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Aktivitas menerapkan kemasan pada produk jadi untuk melindunginya dan menyiapkannya untuk distribusi dan penjualan.</p><h4 class="font-semibold text-slate-700 mt-4">Tingkatan Pengemasan</h4><ul class="list-disc list-inside text-sm text-slate-600"><li><b>Kemasan Primer:</b> Kemasan yang bersentuhan langsung dengan produk (cth: botol saus, plastik pembungkus roti).</li><li><b>Kemasan Sekunder:</b> Kemasan yang menggabungkan beberapa kemasan primer (cth: kotak kardus berisi 12 botol saus).</li><li><b>Kemasan Tersier:</b> Kemasan untuk pengiriman dan transportasi dalam jumlah besar (cth: kardus besar di atas palet kayu).</li></ul><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menerapkan pengemasan produk.</p></div>
+                </div>
+                
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">✔️ Pengendalian Mutu Produk (Quality Assurance)</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Sistem dan prosedur yang dirancang untuk memastikan produk secara konsisten memenuhi atau melampaui standar kualitas yang ditetapkan.</p><h4 class="font-semibold text-slate-700 mt-4">Metodologi: Siklus PDCA (Plan-Do-Check-Act)</h4><div class="text-sm space-y-2"><p><b>1. Plan (Rencanakan):</b> Menetapkan standar kualitas dan merencanakan proses untuk mencapainya.</p><p><b>2. Do (Lakukan):</b> Melaksanakan proses produksi sesuai rencana.</p><p><b>3. Check (Periksa):</b> Memantau dan mengukur produk terhadap standar kualitas. Mengidentifikasi penyimpangan.</p><p><b>4. Act (Tindaklanjuti):</b> Melakukan tindakan korektif untuk memperbaiki penyimpangan dan menyempurnakan proses.</p></div><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menerapkan pengendalian mutu produk.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">📢 Pemasaran Produk</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Seluruh aktivitas perusahaan yang bertujuan untuk mengkomunikasikan nilai produk dan membujuk target pasar untuk melakukan pembelian.</p><h4 class="font-semibold text-slate-700 mt-4">Kerangka Kerja: Bauran Pemasaran (Marketing Mix 4P)</h4><ul class="list-disc list-inside text-sm text-slate-600"><li><b>Product (Produk):</b> Menawarkan solusi yang tepat (kualitas, fitur, desain).</li><li><b>Price (Harga):</b> Menetapkan harga yang kompetitif dan sesuai dengan nilai yang ditawarkan.</li><li><b>Place (Tempat):</b> Memastikan produk mudah diakses oleh target pasar (saluran distribusi).</li><li><b>Promotion (Promosi):</b> Menggunakan berbagai cara (iklan, media sosial, PR) untuk memberitahu dan mengingatkan pasar tentang produk.</li></ul><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Mengevaluasi strategi dan pemasaran produk.</p></div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">🚚 Distribusi Produk</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-4"><p class="text-sm text-slate-600"><b>Definisi:</b> Proses pemindahan produk dari titik produksi ke titik konsumsi secara efisien dan efektif.</p><h4 class="font-semibold text-slate-700 mt-4">Saluran Distribusi Utama</h4><ul class="list-disc list-inside text-sm text-slate-600"><li><b>Saluran Langsung (Direct Channel):</b> Produsen → Konsumen. Contoh: Menjual produk melalui website atau toko resmi milik sendiri.</li><li><b>Saluran Tidak Langsung (Indirect Channel):</b> Melibatkan perantara.<ul><li>Produsen → Pengecer (Retailer) → Konsumen. (cth: Produk masuk ke supermarket)</li><li>Produsen → Pedagang Besar (Wholesaler) → Pengecer → Konsumen. (Untuk jangkauan yang lebih luas)</li></ul></li></ul><p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menerapkan distribusi produk.</p></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pengelolaan" class="mb-16">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-4">2. Pengelolaan Usaha</h2>
+            <div class="space-y-6">
+                
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">💡 Analisis Peluang Usaha</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-6">
+                        <div><p class="text-sm text-slate-600"><b>Definisi:</b> Proses riset dan evaluasi sistematis untuk mengidentifikasi sebuah kebutuhan pasar yang belum terpenuhi dan menentukan apakah ide bisnis yang dirancang untuk memenuhinya layak secara ekonomi dan operasional.</p></div>
+                        
+                        <div><h4 class="font-semibold text-slate-700 mb-2">Tahapan Menemukan & Menganalisis Peluang</h4>
+                            <div class="space-y-4">
+                                <div class="step-box bg-slate-50 border-slate-400"><h5 class="font-bold text-slate-800">Tahap 1: Identifikasi Ide dari Sumber Internal & Eksternal</h5><p class="text-sm text-slate-600 mt-1"><b>Internal:</b> Berasal dari hobi, keahlian, atau pengalaman pribadi Anda. (Contoh: "Saya jago desain grafis, mungkin bisa buka jasa desain").<br><b>Eksternal:</b> Berasal dari pengamatan tren, analisis masalah di sekitar, atau mengadopsi ide bisnis dari tempat lain. (Contoh: "Di sekolah banyak yang butuh jajanan sehat, ini peluang!").</p></div>
+                                <div class="step-box bg-slate-50 border-slate-400"><h5 class="font-bold text-slate-800">Tahap 2: Penyaringan Ide (Screening)</h5><p class="text-sm text-slate-600 mt-1">Tidak semua ide bagus untuk dijalankan. Lakukan evaluasi cepat berdasarkan: <b>Minat</b> (Apakah saya menyukainya?), <b>Keahlian</b> (Apakah saya mampu melakukannya?), <b>Pasar</b> (Apakah ada yang mau membeli?), dan <b>Modal</b> (Apakah biayanya terjangkau?).</p></div>
+                                <div class="step-box bg-slate-50 border-slate-400"><h5 class="font-bold text-slate-800">Tahap 3: Analisis Mendalam dengan Kerangka Kerja</h5><p class="text-sm text-slate-600 mt-1">Gunakan alat analisis untuk membedah potensi ide yang sudah lolos penyaringan.</p></div>
+                            </div>
+                        </div>
+
+                        <div><h4 class="font-semibold text-slate-700 mb-3">Kerangka Analisis: SWOT Mendalam</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div class="bg-green-50 p-4 rounded-md border-l-4 border-green-500"><h5 class="font-bold text-green-800">Strengths (Kekuatan - Internal, Positif)</h5><p class="text-slate-600 mt-1">Faktor internal yang bisa Anda kontrol dan memberikan keunggulan. <b>Pertanyaan kunci:</b> Apa yang kita lakukan lebih baik dari orang lain? Aset unik apa yang kita miliki? (Contoh: Resep keluarga, tim yang solid, keahlian digital marketing).</p></div>
+                                <div class="bg-red-50 p-4 rounded-md border-l-4 border-red-500"><h5 class="font-bold text-red-800">Weaknesses (Kelemahan - Internal, Negatif)</h5><p class="text-slate-600 mt-1">Faktor internal yang menghambat kinerja. <b>Pertanyaan kunci:</b> Di mana kita perlu perbaikan? Keterbatasan apa yang kita hadapi? (Contoh: Modal terbatas, kurang pengalaman, belum punya brand yang dikenal).</p></div>
+                                <div class="bg-blue-50 p-4 rounded-md border-l-4 border-blue-500"><h5 class="font-bold text-blue-800">Opportunities (Peluang - Eksternal, Positif)</h5><p class="text-slate-600 mt-1">Faktor di luar kendali Anda yang bisa dimanfaatkan. <b>Pertanyaan kunci:</b> Tren pasar apa yang menguntungkan? Kebutuhan pasar apa yang belum terpenuhi? (Contoh: Tren gaya hidup sehat, event besar di kota, perkembangan teknologi baru).</p></div>
+                                <div class="bg-yellow-50 p-4 rounded-md border-l-4 border-yellow-500"><h5 class="font-bold text-yellow-800">Threats (Ancaman - Eksternal, Negatif)</h5><p class="text-slate-600 mt-1">Faktor di luar kendali Anda yang bisa merugikan bisnis. <b>Pertanyaan kunci:</b> Hambatan apa yang ada? Apa yang dilakukan pesaing? (Contoh: Munculnya banyak pesaing, perubahan peraturan, kenaikan harga bahan baku).</p></div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menentukan peluang usaha.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">📄 Proposal Usaha</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-6">
+                        <div><p class="text-sm text-slate-600"><b>Definisi:</b> Dokumen tertulis yang merinci semua aspek penting dari sebuah bisnis, mulai dari konsep hingga proyeksi keuangan. Fungsinya ganda: sebagai <b>peta jalan (roadmap)</b> bagi internal dan sebagai <b>alat persuasi</b> untuk pihak eksternal (investor, bank, mitra).</p></div>
+                        
+                        <div><h4 class="font-semibold text-slate-700 mb-2">Anatomi Proposal Usaha yang Komprehensif</h4>
+                            <ul class="list-decimal list-inside text-sm text-slate-700 space-y-3">
+                                <li><b>Ringkasan Eksekutif:</b> "Trailer" dari bisnis Anda. Ditulis terakhir, tapi diletakkan di awal. Harus menjawab: Apa bisnisnya? Apa masalah yang diselesaikan? Siapa target pasarnya? Apa keunggulannya? Berapa dana yang dibutuhkan dan untuk apa?</li>
+                                <li><b>Latar Belakang:</b> Mengapa bisnis ini ada? Bagian ini berisi Visi (impian jangka panjang), Misi (cara mencapai visi), dan perkenalan Tim Inti (jelaskan keahlian masing-masing).</li>
+                                <li><b>Analisis Pasar & Pesaing:</b> Tunjukkan bahwa Anda paham "medan perang". Siapa Target Pelanggan spesifik Anda (demografi, perilaku)? Seberapa besar pasarnya? Siapa saja Pesaing Utama dan apa kelebihan/kekurangan mereka?</li>
+                                <li><b>Deskripsi Produk/Jasa:</b> Jelaskan secara detail apa yang Anda tawarkan. Fokus pada <b>manfaat</b> bagi pelanggan, bukan hanya <b>fitur</b>. Apa <b>Unique Selling Proposition (USP)</b> Anda – hal yang membuat Anda berbeda dan lebih baik dari yang lain?</li>
+                                <li><b>Strategi Pemasaran & Penjualan:</b> Bagaimana cara agar produk Anda laku? Rincikan strategi 4P (Product, Price, Place, Promotion). Jelaskan channel penjualan (online/offline) dan taktik promosi (media sosial, iklan, diskon).</li>
+                                <li><b>Rencana Operasional:</b> Bagaimana bisnis akan berjalan sehari-hari? Jelaskan alur kerja, kebutuhan peralatan, lokasi, dan manajemen pemasok (supplier).</li>
+                                <li><b>Proyeksi Keuangan:</b> "Jantung" dari proposal bagi investor.
+                                    <ul class="list-disc list-inside ml-4 mt-2 text-slate-600">
+                                        <li><b>Analisis Titik Impas (BEP):</b> Pada penjualan berapa unit/rupiah bisnis Anda tidak untung dan tidak rugi? Ini menunjukkan kelayakan dasar.</li>
+                                        <li><b>Proyeksi Laba Rugi:</b> Perkiraan pendapatan dan biaya selama 1-3 tahun ke depan.</li>
+                                        <li><b>Proyeksi Arus Kas:</b> Perkiraan aliran uang masuk dan keluar. Sangat penting untuk menjaga likuiditas.</li>
+                                        <li><b>Kebutuhan & Alokasi Dana:</b> Jika mencari pendanaan, jelaskan berapa yang dibutuhkan dan rincikan penggunaannya (misal: 50% untuk alat, 30% untuk marketing, 20% untuk modal kerja).</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menganalisis proposal usaha.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">💰 Pelaporan Keuangan</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-6">
+                        <div><p class="text-sm text-slate-600"><b>Definisi:</b> Proses mengukur, meringkas, dan mengkomunikasikan informasi keuangan sebuah entitas bisnis. Ini adalah "rapor" kesehatan bisnis Anda yang digunakan oleh pemilik, manajer, investor, dan pemerintah untuk mengambil keputusan.</p></div>
+                        
+                        <div><h4 class="font-semibold text-slate-700 mb-2">Membongkar Tiga Laporan Keuangan Utama</h4>
+                            <div class="space-y-4">
+                                <div class="step-box bg-blue-50 border-blue-400"><h5 class="font-bold text-blue-800">1. Laporan Laba Rugi (Income Statement)</h5><p class="text-sm text-slate-600 mt-1"><b>Tujuan:</b> Mengukur <b>kinerja (profitabilitas)</b> bisnis selama periode waktu tertentu (misal: bulan Januari, atau tahun 2025).<br><b>Logika:</b> Pendapatan yang dihasilkan dikurangi semua biaya yang dikeluarkan untuk mendapatkannya.<br><b>Struktur Utama:</b><br>   Pendapatan Penjualan<br>   (-) Harga Pokok Penjualan (HPP) = <b>Laba Kotor</b><br>   (-) Beban Operasional (gaji, listrik, sewa) = <b>Laba Bersih (Profit)</b></p></div>
+                                
+                                <div class="step-box bg-green-50 border-green-400"><h5 class="font-bold text-green-800">2. Neraca (Balance Sheet)</h5><p class="text-sm text-slate-600 mt-1"><b>Tujuan:</b> Memberikan "foto" <b>posisi keuangan</b> bisnis pada satu titik waktu tertentu (misal: per 31 Desember 2025).<br><b>Persamaan Akuntansi Dasar: Aset = Liabilitas + Ekuitas</b><br>(Apa yang dimiliki perusahaan = Utang kepada pihak lain + Modal dari pemilik)<br><b>Komponen:</b><br>• <b>Aset:</b> Sumber daya yang dimiliki (kas, persediaan barang, peralatan).<br>• <b>Liabilitas:</b> Utang atau kewajiban kepada pihak lain (utang bank, utang ke supplier).<br>• <b>Ekuitas:</b> Modal yang disetor pemilik dan laba ditahan.</p></div>
+                                
+                                <div class="step-box bg-yellow-50 border-yellow-400"><h5 class="font-bold text-yellow-800">3. Laporan Arus Kas (Cash Flow Statement)</h5><p class="text-sm text-slate-600 mt-1"><b>Tujuan:</b> Melacak pergerakan <b>uang tunai (kas)</b> yang masuk dan keluar. Sangat penting karena "Profit tidak sama dengan Kas". Bisnis yang profit bisa bangkrut jika kehabisan kas.<br><b>Tiga Aktivitas Utama:</b><br>• <b>Arus Kas dari Operasi:</b> Kas yang dihasilkan dari kegiatan utama bisnis (penjualan produk, pembayaran gaji).<br>• <b>Arus Kas dari Investasi:</b> Kas yang digunakan/dihasilkan dari pembelian atau penjualan aset jangka panjang (membeli mesin, menjual kendaraan).<br>• <b>Arus Kas dari Pendanaan:</b> Kas yang berasal dari atau dibayarkan kepada pemilik dan pemberi pinjaman (menerima pinjaman bank, setoran modal, membayar cicilan utang).</p></div>
+                            </div>
+                        </div>
+                        
+                        <div><h4 class="font-semibold text-slate-700 mb-2">Studi Kasus: Kedai "Kopi Kilat" Bulan Pertama</h4>
+                            <div class="text-sm text-slate-600 bg-slate-100 p-4 rounded-lg">
+                                Rina membuka kedai kopi. Di bulan pertama, datanya sebagai berikut:
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>Total penjualan kopi: Rp 5.000.000</li>
+                                    <li>Biaya bahan baku (kopi, susu, gula): Rp 2.000.000</li>
+                                    <li>Biaya sewa tempat & listrik: Rp 1.000.000</li>
+                                    <li>Gaji 1 barista: Rp 1.500.000</li>
+                                </ul>
+                                <b>Laporan Laba Rugi Sederhananya:</b><br>
+                                Pendapatan: Rp 5.000.000<br>
+                                HPP: (Rp 2.000.000)<br>
+                                <b>Laba Kotor: Rp 3.000.000</b><br>
+                                Beban Operasional (Sewa, Gaji): (Rp 2.500.000)<br>
+                                <b>Laba Bersih Bulan Ini: Rp 500.000</b>
+                            </div>
+                        </div>
+
+                        <p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Menganalisis laporan keuangan.</p>
+                    </div>
+                </div>
+
+                <div class="interactive-card bg-white rounded-lg shadow-md">
+                    <div class="card-header p-5 flex justify-between items-center cursor-pointer"><h3 class="font-semibold text-lg text-slate-800">©️ HAKI (Hak Atas Kekayaan Intelektual)</h3><span class="arrow text-blue-500 transition-transform duration-300">▼</span></div>
+                    <div class="card-content px-5 pb-5 space-y-6">
+                        <div>
+                            <p class="text-sm text-slate-600"><b>Definisi:</b> Hak hukum eksklusif yang diberikan kepada individu atau perusahaan atas kreasi atau inovasi dari pikiran mereka. HAKI adalah aset tak berwujud yang sangat berharga dalam bisnis.</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-slate-700 mb-2">Mengapa HAKI Penting untuk Usaha Anda?</h4>
+                            <ul class="list-disc list-inside text-sm text-slate-600 space-y-1">
+                                <li><b>Perlindungan:</b> Mencegah pihak lain meniru atau mencuri ide, nama, atau produk Anda tanpa izin.</li>
+                                <li><b>Meningkatkan Nilai Bisnis:</b> HAKI yang terdaftar (seperti merek atau paten) adalah aset yang dapat dijual, dilisensikan, atau dijadikan jaminan.</li>
+                                <li><b>Membangun Reputasi:</b> Merek yang kuat dan terlindungi membangun kepercayaan dan loyalitas konsumen.</li>
+                                <li><b>Keunggulan Kompetitif:</b> Memberikan hak monopoli untuk menggunakan inovasi Anda, membuat Anda unggul dari pesaing.</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-slate-700 mb-3">Jenis-jenis Utama HAKI dan Aplikasinya</h4>
+                            <div class="space-y-4">
+                                <div class="haki-type-box bg-blue-50 border-blue-400">
+                                    <h5 class="font-bold text-blue-800">Merek (Trademark)</h5>
+                                    <p class="text-sm text-slate-700 mt-1"><b>Apa yang dilindungi:</b> Tanda pembeda berupa nama, logo, slogan, atau kombinasi ketiganya untuk barang/jasa.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Karakteristik:</b> Harus didaftarkan (prinsip 'first to file'). Masa berlaku 10 tahun dan dapat diperpanjang tanpa batas.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Contoh Aplikasi Siswa:</b> Nama brand "Keripik Gacor" dan logo burung Anda, nama kafe "Kopi Senja", atau slogan "Renyahnya Bikin Nagih!".</p>
+                                </div>
+                                <div class="haki-type-box bg-green-50 border-green-400">
+                                    <h5 class="font-bold text-green-800">Hak Cipta (Copyright)</h5>
+                                    <p class="text-sm text-slate-700 mt-1"><b>Apa yang dilindungi:</b> Karya orisinal di bidang ilmu pengetahuan, seni, dan sastra.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Karakteristik:</b> Perlindungan timbul secara otomatis saat karya diwujudkan, tanpa perlu pendaftaran (meski pencatatan di DJKI sangat disarankan sebagai bukti). Berlaku seumur hidup pencipta + 70 tahun setelah meninggal.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Contoh Aplikasi Siswa:</b> Desain grafis pada kemasan produk, foto produk di Instagram, video promosi, kode program aplikasi yang Anda buat, tulisan di blog/website.</p>
+                                </div>
+                                <div class="haki-type-box bg-purple-50 border-purple-400">
+                                    <h5 class="font-bold text-purple-800">Desain Industri (Industrial Design)</h5>
+                                    <p class="text-sm text-slate-700 mt-1"><b>Apa yang dilindungi:</b> Penampilan atau estetika luar dari suatu produk. Fokus pada "tampilan", bukan fungsi teknis.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Karakteristik:</b> Harus baru dan didaftarkan. Masa berlaku 10 tahun.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Contoh Aplikasi Siswa:</b> Bentuk botol minuman yang unik dan belum pernah ada, model kursi kafe yang Anda rancang, pola unik pada case handphone.</p>
+                                </div>
+                                 <div class="haki-type-box bg-yellow-50 border-yellow-400">
+                                    <h5 class="font-bold text-yellow-800">Paten (Patent)</h5>
+                                    <p class="text-sm text-slate-700 mt-1"><b>Apa yang dilindungi:</b> Penemuan (invensi) baru yang memberikan solusi teknis terhadap suatu masalah.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Karakteristik:</b> Harus benar-benar baru, inventif (tidak terduga oleh ahli), dan dapat diterapkan industri. Proses pendaftaran sangat ketat dan mahal. Berlaku 20 tahun.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Contoh Aplikasi Siswa:</b> (Lebih jarang) Mesin pengupas bawang otomatis dengan mekanisme baru yang Anda ciptakan, proses kimia baru untuk mengawetkan makanan.</p>
+                                </div>
+                                <div class="haki-type-box bg-red-50 border-red-400">
+                                    <h5 class="font-bold text-red-800">Rahasia Dagang (Trade Secret)</h5>
+                                    <p class="text-sm text-slate-700 mt-1"><b>Apa yang dilindungi:</b> Informasi rahasia yang memiliki nilai ekonomi karena tidak diketahui umum.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Karakteristik:</b> Tidak perlu didaftarkan. Perlindungan berlaku selama informasi tersebut tetap dijaga kerahasiaannya.</p>
+                                    <p class="text-sm text-slate-700 mt-2"><b>Contoh Aplikasi Siswa:</b> Resep bumbu rahasia "Keripik Gacor", daftar supplier bahan baku terbaik, formula atau algoritma unik dalam software Anda.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-slate-700 mb-2">Studi Kasus: Usaha "ChocoCraft" oleh Siswa SMK</h4>
+                            <div class="text-sm text-slate-600 bg-slate-100 p-4 rounded-lg">
+                                Budi, seorang siswa SMK Tata Boga, menciptakan produk cokelat praline dengan isian rasa buah lokal yang unik. Mari evaluasi HAKI untuk usahanya:
+                                <ul class="list-decimal list-inside mt-2 space-y-1">
+                                    <li><b>Nama "ChocoCraft" dan logonya:</b> Didaftarkan sebagai <b>Merek</b> untuk mencegah orang lain memakai nama yang sama untuk produk cokelat.</li>
+                                    <li><b>Desain kotak kemasan berbentuk unik (misal, bentuk buah):</b> Didaftarkan sebagai <b>Desain Industri</b>.</li>
+                                    <li><b>Foto-foto produk estetik di akun Instagram @ChocoCraft:</b> Otomatis dilindungi oleh <b>Hak Cipta</b>.</li>
+                                    <li><b>Formula rahasia isian buah naga-kayu manis:</b> Dijaga sebagai <b>Rahasia Dagang</b>, tidak diungkapkan kepada siapa pun.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-xs font-semibold text-blue-700 bg-blue-100 rounded-full px-3 py-1 inline-block">Kompetensi: Mengevaluasi HAKI.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="kuis">
+            <h2 class="text-3xl font-bold text-slate-800 mb-8 border-l-4 border-blue-500 pl-4">Uji Kompetensi Komprehensif</h2>
+            <div id="quiz-container" class="bg-white rounded-lg shadow-xl p-6 md:p-8 max-w-4xl mx-auto">
+                <div id="quiz-content"></div>
+                <div id="quiz-result" class="hidden text-center">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Kuis Selesai!</h3>
+                    <p id="score-text" class="text-lg text-slate-600 mb-6"></p>
+                    <button id="restart-quiz-btn" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.interactive-card .card-header');
+            cards.forEach(cardHeader => cardHeader.addEventListener('click', () => cardHeader.parentElement.classList.toggle('active')));
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section[id]');
+            window.addEventListener('scroll', () => {
+                let current = 'hero';
+                sections.forEach(section => { if (pageYOffset >= section.offsetTop - 80) current = section.id; });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) link.classList.add('active');
+                });
+            });
+
+            const quizData = [
+                { question: "Dalam analisis SWOT, tren gaya hidup sehat di masyarakat merupakan contoh dari...", options: ["Strength", "Weakness", "Opportunity", "Threat"], answer: "Opportunity" },
+                { question: "Bagian dari proposal usaha yang berfungsi sebagai 'trailer' dan ditulis terakhir namun diletakkan di awal adalah...", options: ["Analisis Pasar", "Ringkasan Eksekutif", "Latar Belakang", "Proyeksi Keuangan"], answer: "Ringkasan Eksekutif" },
+                { question: "Laporan keuangan yang menunjukkan kinerja profitabilitas bisnis selama periode waktu tertentu adalah...", options: ["Neraca", "Laporan Arus Kas", "Laporan Laba Rugi", "Proposal Usaha"], answer: "Laporan Laba Rugi" },
+                { question: "Persamaan Akuntansi Dasar yang menjadi fondasi dari Neraca adalah...", options: ["Pendapatan - Beban = Laba", "Kas Masuk - Kas Keluar = Arus Kas Bersih", "Aset = Liabilitas + Ekuitas", "HPP + Laba Kotor = Penjualan"], answer: "Aset = Liabilitas + Ekuitas" }
+            ];
+            let currentQuestionIndex = 0, score = 0;
+            const quizContent = document.getElementById('quiz-content'), quizResult = document.getElementById('quiz-result'), scoreText = document.getElementById('score-text'), restartBtn = document.getElementById('restart-quiz-btn');
+            function loadQuestion() {
+                if (currentQuestionIndex < quizData.length) {
+                    const q = quizData[currentQuestionIndex];
+                    quizContent.innerHTML = `<p class="text-slate-500 text-sm mb-2">Pertanyaan ${currentQuestionIndex + 1}/${quizData.length}</p><h3 class="text-xl font-semibold text-slate-800 mb-6">${q.question}</h3><div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">${q.options.map(o => `<button class="quiz-option p-4 border-2 border-slate-200 rounded-lg text-left hover:border-blue-500 hover:bg-blue-50 transition">${o}</button>`).join('')}</div>`;
+                    document.querySelectorAll('.quiz-option').forEach(opt => opt.addEventListener('click', handleOptionClick));
+                } else showResults();
+            }
+            function handleOptionClick(e) {
+                const selected = e.target, answer = quizData[currentQuestionIndex].answer;
+                document.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.disabled = true;
+                    if (opt.textContent.trim() === answer) opt.classList.add('correct');
+                });
+                if (selected.textContent.trim() === answer) { score++; selected.classList.add('correct'); } else selected.classList.add('incorrect');
+                setTimeout(() => { currentQuestionIndex++; loadQuestion(); }, 1500);
+            }
+            function showResults() { quizContent.style.display = 'none'; quizResult.style.display = 'block'; scoreText.textContent = `Skor Anda: ${score} dari ${quizData.length} pertanyaan benar!`; }
+            restartBtn.addEventListener('click', () => { currentQuestionIndex = 0; score = 0; quizResult.style.display = 'none'; quizContent.style.display = 'block'; loadQuestion(); });
+            loadQuestion();
+        });
+    </script>
+</body>
+</html>
+
